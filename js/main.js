@@ -48,6 +48,10 @@ var lineType = [lineSize,line,square,circular];
 var colorType = [color,frontColor,straw,font,eraser];
 var funcType = [cancelPrev,redo,clearSceen,download,saveImg];
 
+//设置canvas绘图环境
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
 
 //事件兼容写法
 function addEventHander(obj,eventName,hander,type){
@@ -99,10 +103,51 @@ function setStatus(Arr,num,type){
 	}
 }
 
+//设置初始值 
+//默认选择pencil
+Pencil();
+
+
 //对应函数
 
 function Pencil(){
 	setStatus(penType,0,1);
+	var flag = 0;//设置标志位 检测鼠标是否按下
+	canvas.onmousedown = function(e){
+	  //获取当前鼠标相对于canvas起始点(0,0)坐标
+	  //获取鼠标相对于页面顶端距离
+	  e = window.event || e;
+	  var startX = e.pageX - this.offsetLeft;
+	  var startY = e.pageY - this.offsetTop;
+	  //alert(startX + "|"+startY);
+	  ctx.beginPath();
+	  ctx.moveTo(startX,startY);
+	  flag = 1;
+	}
+	
+	//鼠标移动的时候 不同的绘图（获取鼠标的位置）
+	canvas.onmousemove = function(e){
+	  e = window.event || e;
+	  var endX = e.pageX - this.offsetLeft;
+	  var endY = e.pageY - this.offsetTop;
+	  //判断鼠标是否按下
+	  if(flag){
+	     //移动的时候设置路径并画图
+	    ctx.lineTo(endX,endY);
+	    ctx.stroke();
+	  }
+	  
+	 
+	}
+	//鼠标抬起的时候结束绘图
+	canvas.onmouseup = function(){
+	  flag = 0;
+	}
+	
+	//鼠标 出canvas取消画图操作
+	canvas.onmouseout = function(){
+	  flag = 0;
+	}
 }
 function Pen(){
 	setStatus(penType,1,1);
@@ -155,3 +200,16 @@ function Download(){
 function Saveimg(){
 	setStatus(funcType,4,1);
 }
+
+//画图步骤
+/**
+ * 开始绘图路径 ctx.beginPath()
+ * 设置绘图的开始点 ctx.moveTo(); 鼠标按下的时候
+ * 绘制不同的点 ctx.lineTo();//鼠标移动的时候
+ * 绘制不同的点 ctx.lineTo();
+ * 绘制不同的点 ctx.lineTo();
+ * 结束绘图路径 ctx.closePath();
+ * 用画笔画出路径 ctx.stroke(); 鼠标移动的时候
+ * 结束绘图的时候 鼠标抬起
+ */
+
