@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>IconFont</title>
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="iconfont.css">
+</head>
+<body>
+    <div class="main markdown">
+        <h1>IconFont 图标</h1>
+        <ul class="icon_lists clear">
+            
+                <li>
+                <i class="icon iconfont icon-save"></i>
+                    <div class="name">保存</div>
+                    <div class="fontclass">.icon-save</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-ordinarydownload"></i>
+                    <div class="name">下载</div>
+                    <div class="fontclass">.icon-ordinarydownload</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-xiangpica"></i>
+                    <div class="name">橡皮擦</div>
+                    <div class="fontclass">.icon-xiangpica</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-iocnchexiao"></i>
+                    <div class="name">撤销</div>
+                    <div class="fontclass">.icon-iocnchexiao</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-22"></i>
+                    <div class="name">字体</div>
+                    <div class="fontclass">.icon-22</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-bi"></i>
+                    <div class="name">毛笔</div>
+                    <div class="fontclass">.icon-bi</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-chexiao"></i>
+                    <div class="name">撤销</div>
+                    <div class="fontclass">.icon-chexiao</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-qingkong"></i>
+                    <div class="name">清空</div>
+                    <div class="fontclass">.icon-qingkong</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-zhengfangxing"></i>
+                    <div class="name">正方形</div>
+                    <div class="fontclass">.icon-zhengfangxing</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-pencil"></i>
+                    <div class="name">铅笔</div>
+                    <div class="fontclass">.icon-pencil</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-ziti"></i>
+                    <div class="name">字体</div>
+                    <div class="fontclass">.icon-ziti</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-youqi"></i>
+                    <div class="name">油漆</div>
+                    <div class="fontclass">.icon-youqi</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-cuxixiantiao"></i>
+                    <div class="name">粗细线条</div>
+                    <div class="fontclass">.icon-cuxixiantiao</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-gangbi02-copy"></i>
+                    <div class="name">钢笔-02</div>
+                    <div class="fontclass">.icon-gangbi02-copy</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-xiexian"></i>
+                    <div class="name">斜线</div>
+                    <div class="fontclass">.icon-xiexian</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-dian3"></i>
+                    <div class="name">点</div>
+                    <div class="fontclass">.icon-dian3</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-color"></i>
+                    <div class="name">颜色</div>
+                    <div class="fontclass">.icon-color</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-tuya-copy"></i>
+                    <div class="name">涂鸦</div>
+                    <div class="fontclass">.icon-tuya-copy</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-xiguangongju"></i>
+                    <div class="name">吸管工具</div>
+                    <div class="fontclass">.icon-xiguangongju</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-yuanxing"></i>
+                    <div class="name">圆形</div>
+                    <div class="fontclass">.icon-yuanxing</div>
+                </li>
+            
+        </ul>
+
+        <h2 id="font-class-">font-class引用</h2>
+        <hr>
+
+        <p>font-class是unicode使用方式的一种变种，主要是解决unicode书写不直观，语意不明确的问题。</p>
+        <p>与unicode使用方式相比，具有如下特点：</p>
+        <ul>
+        <li>兼容性良好，支持ie8+，及所有现代浏览器。</li>
+        <li>相比于unicode语意明确，书写更直观。可以很容易分辨这个icon是什么。</li>
+        <li>因为使用class来定义图标，所以当要替换图标时，只需要修改class里面的unicode引用。</li>
+        <li>不过因为本质上还是使用的字体，所以多色图标还是不支持的。</li>
+        </ul>
+        <p>使用步骤如下：</p>
+        <h3 id="-fontclass-">第一步：引入项目下面生成的fontclass代码：</h3>
+
+
+        <pre><code class="lang-js hljs javascript"><span class="hljs-comment">&lt;link rel="stylesheet" type="text/css" href="./iconfont.css"&gt;</span></code></pre>
+        <h3 id="-">第二步：挑选相应图标并获取类名，应用于页面：</h3>
+        <pre><code class="lang-css hljs">&lt;<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">class</span>="<span class="hljs-selector-tag">iconfont</span> <span class="hljs-selector-tag">icon-xxx</span>"&gt;&lt;/<span class="hljs-selector-tag">i</span>&gt;</code></pre>
+        <blockquote>
+        <p>"iconfont"是你项目下的font-family。可以通过编辑项目查看，默认是"iconfont"。</p>
+        </blockquote>
+    </div>
+</body>
+</html>

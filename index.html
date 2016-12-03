@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>drawing-board</title>
 		<link rel="stylesheet" type="text/css" href="css/resets.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
 		<link rel="stylesheet" href="css/canvas.css" />
 		<script src="js/vendor/jquery.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
@@ -14,11 +15,37 @@
 			
 			<!--工具区域-->
 			<ul class="tool">
-				<li>图像</li>
-				<li>工具</li>
-				<li>形状</li>
-				<li>线宽</li>
-				<li>颜色</li>
+				<!--笔类型-->
+				<li title="铅笔" class="active"><i class="iconfont">&#xe621;</i></li><!--铅笔-->
+				<li title="钢笔"><i class="iconfont">&#xe603;</i></li><!--钢笔-->
+				<li title="毛笔"><i class="iconfont">&#xe602;</i></li><!--毛笔-->
+				<li class="border" title="涂鸦"><i class="iconfont">&#xe600;</i></li><!--涂鸦-->
+				<!--线条风格-->
+				<li title="线条大小" class="line">
+					<i class="iconfont">&#xe61d;</i>
+					<div class="lineType">
+						<p class="active"><i class="iconfont first">&#xe604;</i></p>
+						<p><i class="iconfont second">&#xe604;</i></p>
+						<p><i class="iconfont three">&#xe604;</i></p>
+						<p><i class="iconfont third">&#xe604;</i></p>
+					</div>
+				</li><!--粗细线条-->		
+				
+				<li title="画直线"><i class="iconfont">&#xe630;</i></li><!--斜线-->
+				<li title="方形"><i class="iconfont">&#xe634;</i></li><!--正方形-->
+				<li class="border" title="圆"><i class="iconfont">&#xe611;</i></li><!--圆形-->
+				<!--样式-->
+				<li title="选择颜色"><i class="iconfont">&#xe6f3;</i></li><!--颜色-->
+				<li title="填充前景"><i class="iconfont">&#xe64c;</i></li><!--油漆-->
+				<li title="吸管"><i class="iconfont">&#xe670;</i></li><!--吸管工具-->
+				<li title="字体"><i class="iconfont">&#xe618;</i></li><!--字体-->
+				<li class="border" title="橡皮擦"><i class="iconfont">&#xe6c5;</i></li><!--橡皮擦-->
+				<!--功能-->
+				<li title="撤销上一个操作"><i class="iconfont">&#xe60a;</i></li><!--撤销-->
+				<li title="重做上一个操作"><i class="iconfont">&#xe716;</i></li><!--撤销-->
+				<li title="清屏"><i class="iconfont">&#xe71a;</i></li><!--清空-->
+				<li title="下载"><i class="iconfont">&#xe6c8;</i></li><!--下载-->
+				<li title="保存"><i class="iconfont">&#xe633;</i></li><!--保存-->
 			</ul>
 		</header>
 		<section id="content">
