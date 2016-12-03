@@ -1,5 +1,5 @@
 body {
-	background: #ABCDEF;
+	background: #fff;
 	font-family: "Microsoft Yahei";
 }
 #header {
@@ -60,34 +60,37 @@ body {
 
 #header ul.tool li.line .lineType {
     width: 36px;
-    border: 1px solid #ccc;
+    border: 1px solid #e2dede;
+    border-radius: 5px 5px 0 0;
     position: absolute;
     top: 32px;
     left: -3px;
-    
+    display: none;
 }
 
 #header ul.tool .lineType p {
 	padding: 1px 0;
 	cursor: pointer;
 }
-
+#header ul.tool .lineType p i.iconfont {
+	color: #000;
+}
 #header ul.tool .lineType p.active,
 #header ul.tool .lineType p:hover {
-	background: #ddd;
+	background: rgba(218, 218, 218, 0.14);
 }
 
 #header ul.tool .lineType p i.first{
-	font-size: 10px;
+	font-size: 14px;
 }
 #header ul.tool .lineType p i.second{
-	font-size: 15px;
-}
-#header ul.tool .lineType p i.three{
 	font-size: 20px;
 }
+#header ul.tool .lineType p i.three{
+	font-size: 27px;
+}
 #header ul.tool .lineType p i.third{
-	font-size: 25px;
+	font-size: 35px;
 }
 #content {
 	width: 960px;
@@ -99,7 +102,7 @@ body {
 #footer {
 	width: 960px;
 	height: 50px;
-	background-color: #ddd;
+	background-color: #fff;
 	margin: 0 auto;
 	text-align: center;
 	line-height: 50px;
