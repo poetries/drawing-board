@@ -16,10 +16,9 @@
 				<!--笔类型-->
 				<li title="铅笔" class="active" id="pencil"><i class="iconfont">&#xe621;</i></li><!--铅笔-->
 				<li title="钢笔" id="pen"><i class="iconfont">&#xe603;</i></li><!--钢笔-->
-				<li title="毛笔" id="brush"><i class="iconfont">&#xe602;</i></li><!--毛笔-->
-				<li class="border" title="涂鸦" id="tuya"><i class="iconfont">&#xe600;</i></li><!--涂鸦-->
+				<li  title="涂鸦" id="tuya"><i class="iconfont">&#xe601;</i></li><!--涂鸦-->
 				<!--线条风格-->
-				<li title="线条大小" class="line" id="lineSize">
+				<li title="线条大小" class="line border" id="lineSize">
 					<i class="iconfont">&#xe61d;</i>
 					<div class="lineType">
 						<p class="active"><i class="iconfont first">&#xe604;</i></p>
@@ -30,8 +29,14 @@
 				</li><!--粗细线条-->		
 				
 				<li title="画直线" id="line"><i class="iconfont">&#xe630;</i></li><!--斜线-->
-				<li title="方形" id="square"><i class="iconfont">&#xe634;</i></li><!--正方形-->
-				<li class="border" title="圆" id="circular"><i class="iconfont">&#xe611;</i></li><!--圆形-->
+				<li title="方形" id="square"><i class="iconfont">&#xe634;</i></li><!--正方形轮廓-->
+				<li title="圆" id="circular"><i class="iconfont">&#xe611;</i></li><!--圆形轮廓-->
+				<li title="三角形" id="poly"><i class="iconfont">&#xe675;</i></li><!--三角形轮廓-->
+				
+				<li title="正方形填充" id="squareFill"><i class="iconfont">&#xe600;</i></li><!--正方形填充-->
+				<li title="圆形填充" id="circularFill"><i class="iconfont">&#xe609;</i></li><!--圆形填充-->
+				<li class="border" title="三角形填充" id="polyFill"><i class="iconfont">&#xe60d;</i></li><!--三角形填充-->
+				
 				<!--样式-->
 				<li title="选择颜色" id="color"><i class="iconfont">&#xe6f3;</i></li><!--颜色-->
 				<li title="填充前景" id="frontColor"><i class="iconfont">&#xe64c;</i></li><!--油漆-->
@@ -49,7 +54,7 @@
 		<section id="content">
 		
 			<!--绘图区域-->
-			<canvas id="canvas" width="960" height="550">您的浏览器不支持canvas!</canvas>
+			<canvas id="canvas" width="1090" height="550">您的浏览器不支持canvas!</canvas>
 		</section>
 		<footer id="footer">
 			<small>版权所有  Designed by <a href="http://blog.poetries.top" target="_blank">@poetries</a></small>
