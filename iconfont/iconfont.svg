@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata>
-Created by FontForge 20120731 at Sun Dec  4 13:09:33 2016
+Created by FontForge 20120731 at Sun Dec  4 14:13:32 2016
  By admin
 </metadata>
 <defs>
@@ -86,6 +86,9 @@ q0 -35 -25 -60t-60 -25h-1110q-35 0 -60 25t-25 60v86q0 35 25 60t60 25z" />
     <glyph glyph-name="gangbi02-copy" unicode="&#xe603;" 
 d="M200 323l159 -239l-94 -143q-4 -7 0 -14.5t12 -7.5h439q8 0 12 7.5t0 14.5l-94 143l159 239q5 7 1 14l-228 470q-4 8 -13 8h-113q-9 0 -13 -8l-228 -470q-4 -7 1 -14zM303 -53l81 124h225l81 -124h-387zM496 371q28 0 44 -19t16 -41.5t-16 -41.5t-44 -19v121zM449 787h33
 v-389q-34 -6 -56 -34.5t-18 -63.5q4 -33 29.5 -55.5t59 -22.5t59 22.5t29.5 55.5q4 35 -18 63.5t-57 34.5v389h34l221 -455l-156 -233h-225l-156 233z" />
+    <glyph glyph-name="fangdajing" unicode="&#xe626;" 
+d="M479.5 824q-105.5 0 -195 -52t-141.5 -141t-52 -194.5t52 -195t141.5 -141.5t195 -52t195 52t141.5 141.5t52 195t-52 194.5t-141.5 141t-195 52zM479.5 155q-116.5 0 -198.5 82.5t-82 199t82 198.5t198.5 82t198.5 -82t82 -198.5t-82 -199t-198.5 -82.5zM953 -15
+q-15 -15 -36 -15t-36 15l-151 152q-15 14 -15 35t15 36v0q14 14 35 14t36 -14l152 -152q14 -15 14 -35.5t-14 -35.5v0zM273 477h419v-88h-419v88zM438 643h89v-420h-89v420z" />
     <glyph glyph-name="rect" unicode="&#xe600;" 
 d="M0 896h1024v-1024h-1024v1024z" />
     <glyph glyph-name="xiexian" unicode="&#xe630;" 

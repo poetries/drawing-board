@@ -33,12 +33,19 @@ var squareFill = document.getElementById("squareFill");
 var circularFill = document.getElementById("circularFill");
 var polyFill = document.getElementById("polyFill");
 
+//线宽类型 1 3 5 8
+var lineW_1 = document.getElementById("lineW_1");
+var lineW_3 = document.getElementById("lineW_3");
+var lineW_5 = document.getElementById("lineW_5");
+var lineW_8 = document.getElementById("lineW_8");
+
 //颜色风格
 var color = document.getElementById("color");
 var frontColor =document.getElementById("frontColor");
 var straw = document.getElementById("straw");//吸管
 var font = document.getElementById("font");
 var eraser =document.getElementById("eraser");
+var magnifier = document.getElementById("magnifier");
 
 //功能
 var cancelPrev =document.getElementById("cancelPrev");
@@ -49,8 +56,9 @@ var saveImg = document.getElementById("saveImg");
 
 var penType = [pencil,pen,tuya,lineSize];
 var lineType = [line,square,circular,poly,squareFill,circularFill,polyFill];
-var colorType = [color,frontColor,straw,font,eraser];
+var colorType = [color,frontColor,straw,font,eraser,magnifier];
 var funcType = [cancelPrev,redo,clearSceen,download,saveImg];
+var lineWidths = [lineW_1,lineW_3,lineW_5,lineW_8,];
 
 //设置canvas绘图环境
 var canvas = document.getElementById("canvas");
@@ -84,6 +92,7 @@ addEventHander(colorType[1],"click",FrontColor,false);
 addEventHander(colorType[2],"click",Straw,false);
 addEventHander(colorType[3],"click",Font,false);
 addEventHander(colorType[4],"click",Eraser,false);
+addEventHander(colorType[5],"click",Magnifier,false);
 addEventHander(funcType[0],"click",Redo,false);
 addEventHander(funcType[1],"click",CancelPrev,false);
 addEventHander(funcType[2],"click",ClearSceen,false);
@@ -130,7 +139,7 @@ function Pencil(){
  * 结束绘图的时候 鼠标抬起
  */
 
-	//setStatus(penType,0,1);
+	
 	var flag = 0;//设置标志位 检测鼠标是否按下
 	canvas.onmousedown = function(e){
 	  //获取当前鼠标相对于canvas起始点(0,0)坐标
@@ -173,13 +182,33 @@ function Pen(){
 }
 
 function Tuya(){
-	//setStatus(penType,3,1);
+	
 }
+//设置线宽函数
 function LineSize(){
-	//setStatus(lineType,0,1);
+	for (var i = 0;i < lineWidths.lenght;i++) {
+		switch (lineWidths[i]){
+			case 0:
+				ctx.lineWidth = 1;
+				break;
+			case 1:
+				ctx.lineWidth = 3;
+				break;
+			case 2:
+				ctx.lineWidth = 5;
+				break;
+			case 3:
+				ctx.lineWidth = 8;
+				break;
+			default:
+				ctx.lineWidth = 1;
+				break;
+			}
+	}
+	
 }
 function Line(){
-	//setStatus(lineType,1,1);
+	
 /**
  * 画直线分析：
  * 鼠标点击下去的时候获取直线的开始点
@@ -221,7 +250,7 @@ var rectX = 0;
 var rectY = 0;
 
 function Square(){
-	//setStatus(lineType,2,1);
+	
 	/**
 	 * 画矩形分析：
 	 * 鼠标按下的时候 获取矩形开始点
@@ -253,7 +282,7 @@ function Square(){
 }
 //画矩形填充
 function SquareFill(){
-	//setStatus(lineType,2,1);
+	
 	/**
 	 * 画矩形分析：
 	 * 鼠标按下的时候 获取矩形开始点
@@ -375,7 +404,7 @@ var arcX,arcY;
 
 //画圆圈
 function Circular(){
-	//setStatus(lineType,3,1);
+	
 	/**
 	 * 画圆分析：
 	 * 鼠标按下去的时候 获取圆心
@@ -416,7 +445,7 @@ function Circular(){
 
 //画圆形(填充)
 function CircularFill(){
-	//setStatus(lineType,3,1);
+	
 	/**
 	 * 画圆分析：
 	 * 鼠标按下去的时候 获取圆心
@@ -444,6 +473,7 @@ function CircularFill(){
 		var c = Math.sqrt(a*a+b*b);//c 计算半径
 		
 		//画图
+
 		ctx.beginPath();
 		ctx.arc(arcX,arcY,c,0,360,false);
 		ctx.closePath();
@@ -457,32 +487,157 @@ function CircularFill(){
 function Color(){
 	//setStatus(colorType,0,1);
 }
+//油漆桶功能
 function FrontColor(){
-	//setStatus(colorType,1,1);
+	/**
+	 * 分析：
+	 * 鼠标点击canvas整个画布变成一种颜色
+	 * 鼠标移动、抬起、移出画布不操作
+	 * 
+	 */
+	canvas.onmousedown = function(e){
+		//填充画布指定颜色 画一个填充颜色的矩形
+		//ctx.fillStyle = "red";
+		ctx.fillRect(0,0,1100,550);
+		
+	}
+	
+	//注销事件
+	canvas.onmouseup = null;
+	canvas.onmouseout = null;
+	canvas.onmousemove = null;
 }
+
+//吸管函数
 function Straw(){
-	//setStatus(colorType,2,1);
+	canvas.onmousedown =function(e){
+		var e = e || window.event;
+		var strawX = e.pageX - this.offsetLeft;
+		var strawY = e.pageY - this.offsetTop;
+		//获取该点颜色信息
+		//获取图像信息的方法 getImageData(开始点x,开始点y,宽度,高度)
+		//obj.data = [红,绿,蓝,透明度] 取值范围都是 0-255
+		var obj = ctx.getImageData(strawX,strawY,1,1);
+		var color = 'rgb('+obj.data[0]+','+obj.data[1]+','+obj.data[2]+')';
+		ctx.strokeStyle = color;
+		ctx.fillStyle = color;
+		
+		//颜色吸取完后 调用画笔工具
+		Pencil();
+	}
+	canvas.onmousemove = null;
+	canvas.onmouseout = null;
+	canvas.onmouseup = null;
+	
 }
+//放大镜功能
+function Magnifier(){
+	//用户输入数据的大小
+	var scale = window.prompt("请输入要放大的百分比(只接受整型)",'100');
+	
+	//把数据转换成canvas画布的大小 
+	var scaleW = 1090 * scale / 100;
+	var scaleH = 550 * scale / 100;
+	//将数据设置到HTML标签上
+	canvas.style.widht = parseInt(scaleW) + "px"; 
+	canvas.style.height = parseInt(scaleH) + "px"; 
+}
+
+//文本工具函数
 function Font(){
-	//setStatus(colorType,3,1);
+	/**
+	 * 功能分析
+	 * 鼠标点击时触发写字的方法
+	 * 鼠标移动、抬起、移出不需要操作
+	 */
+	canvas.onmousedown = function(e){
+		var e = e || window.event;
+		var textPosX = e.pageX - this.offsetLeft;
+		var textPosY = e.pageY - this.offsetTop;
+		//window.prompt()提示
+		var userVal = window.prompt("请输入文字","");
+		if (userVal != null) {
+			ctx.fillText(userVal,textPosX,textPosY);
+		} 
+		
+	}
+	canvas.onmousemove = null;
+	canvas.onmouseup = null;
+	canvas.onmouseout = null;
 }
+//Eraser 全局变量
+var eraserFlag = 0;//设置橡皮檫的状态标志位
 function Eraser(){
-	//setStatus(colorType,4,1);
+	/**
+	 * 橡皮功能分析：
+	 * 鼠标点击的时候 擦除点击处的区域
+	 * 鼠标移动的时候 随着鼠标移动 擦除移动过得地方发
+	 * 鼠标抬起 取消擦除事件 
+	 * 鼠标移出的时候 取消擦除事件
+	 */
+	
+	canvas.onmousedown = function(e){
+		var e = e || window.event;
+		//获取鼠标相对canvas的坐标
+		var eraserX = e.pageX - this.offsetLeft;
+		var eraserY = e.pageY - this.offsetTop;
+		//canvas 擦除方法
+		ctx.clearRect(eraserX-ctx.lineWidth,eraserY-ctx.lineWidth,ctx.lineWidth*2,ctx.lineWidth*2);//擦除点开始位置
+		eraserFlag = 1;
+	}
+	//随鼠标移动不停擦除
+	canvas.onmousemove = function(e){
+		var e = e || window.event;
+		var eraserX = e.pageX - this.offsetLeft;
+		var eraserY = e.pageY - this.offsetTop;
+		// 擦除方法
+		if(eraserFlag){//判断鼠标左键是否按下
+			ctx.clearRect(eraserX-ctx.lineWidth,eraserY-ctx.lineWidth,ctx.lineWidth*2,ctx.lineWidth*2);//擦除
+		}
+		
+	}
+	canvas.onmouseup = function(e){
+		eraserFlag = 0;//清除擦除状态位
+	}
+	canvas.onmouseout = function(e){
+		eraserFlag = 0;
+	}
 }
 function Redo(){
-	//setStatus(funcType,0,1);
+	
 }
 function CancelPrev(){
-	//setStatus(funcType,1,1);
+	
 }
+//清空画布
 function ClearSceen(){
-	//setStatus(funcType,2,1);
+	ctx.clearRect(0,0,1100,550);
 }
 function Download(){
-	//setStatus(funcType,3,1);
+	/**
+	 * 分析：js不能操作本地文件 
+	 */
+	//var imgdata = canvas.toDataURL();
+	//var b64 = imgdata.substring(22);
+	
+	 var DataURL= canvas.toDataURL("image/png");//转换图片信息
+  
+	var saveFile = function(data, filename){
+	    var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+	    save_link.href = data;
+	    save_link.download = filename;
+	  
+	    var event = document.createEvent('MouseEvents');
+	    event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+	    save_link.dispatchEvent(event);
+	};
+	
+	
+	  saveFile(DataURL,"canvas.png");
+	
 }
 function Saveimg(){
-	//setStatus(funcType,4,1);
+	
 }
 
 

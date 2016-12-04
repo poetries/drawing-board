@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1480828173952'); /* IE9*/
-  src: url('iconfont.eot?t=1480828173952#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1480828173952') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1480828173952') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1480828173952#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1480832012618'); /* IE9*/
+  src: url('iconfont.eot?t=1480832012618#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1480832012618') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1480832012618') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1480832012618#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -51,6 +51,8 @@
 .icon-cuxixiantiao:before { content: "\e61d"; }
 
 .icon-gangbi02-copy:before { content: "\e603"; }
+
+.icon-fangdajing:before { content: "\e626"; }
 
 .icon-rect:before { content: "\e600"; }
 
