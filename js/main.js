@@ -49,12 +49,93 @@ addEventHander(lineWidths[3],"click",LineW8,false);
 window.onload = init;
 
 function init(){
-	//默认选择pencil
-	Pencil();
-
 	
-	//默认线宽
-	setLineWidth(2);
-	
+	Pencil();//默认选择pencil
+	setLineWidth(2);//默认线宽
+	initDrag();//初始化拖放事件
 }
 
+// 处理文件拖入事件，防止浏览器默认事件带来的重定向
+function handleDragOver(evt) {
+	evt.stopPropagation();
+	evt.preventDefault();
+ }
+
+
+// 判断是否图片
+function isImage(type) {
+	switch (type) {
+	case 'image/jpeg':
+	case 'image/png':
+	case 'image/gif':
+	case 'image/bmp':
+	case 'image/jpg':
+		return true;
+	default:
+		return false;
+	}
+}
+
+
+ // 处理拖放文件列表
+function handleFileSelect(evt) {
+	evt.stopPropagation();
+	evt.preventDefault();
+
+	var files = evt.dataTransfer.files;
+
+	for (var i = 0, f; f = files[i]; i++) {
+		var t = f.type ? f.type : 'n/a';
+		reader = new FileReader();
+		isImg = isImage(t);
+
+		// 处理得到的图片
+		if (isImg) {
+			reader.onload = (function (theFile) {
+				return function (e) {
+					var  image = new Image();
+					image.src =  e.target.result ;
+
+					var hRatio;
+					var wRatio;
+					var l = 0;
+					var t = 0;
+					var maxWidth = 960;
+					var maxHeight = 580;
+					var Ratio = 1;
+					var w = image.width;
+					var h = image.height;
+					wRatio = maxWidth / w;
+					hRatio = maxHeight / h;
+					// 图像大小超出绘画板大小，计算出缩放比例
+					if (wRatio<1 || hRatio<1){
+						Ratio = (wRatio<=hRatio?wRatio:hRatio);
+					}
+					// 根据比例重新设置图像大小
+					if (Ratio<1){
+						w = w * Ratio;
+						h = h * Ratio;
+
+					}
+					// 图片居中摆放
+					l = (maxWidth - w)/2;
+					t = (maxHeight - h)/2;
+
+					image.onload = function(){
+						// 居中缩放
+						ctx.drawImage(image , 0 ,0 , image.width , image.height , l , t , w , h);
+					}
+
+				};
+			})(f)
+			reader.readAsDataURL(f);
+		}
+	}
+}
+
+//初始化拖入效果
+var initDrag= function(){
+	var dragDiv  = document.getElementById("canvas");
+	dragDiv.addEventListener('dragover', handleDragOver, false);
+	dragDiv.addEventListener('drop', handleFileSelect, false);
+}
