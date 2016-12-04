@@ -8,7 +8,7 @@ body {
 	background: #fff;
 	margin: 0 auto;
 	text-align: center;
-	
+	position: relative;
 }
 #header h1{
     float: left;
@@ -58,38 +58,38 @@ body {
     color: #ccc;
 }
 
-#header ul.tool li.line .lineType {
+#header .lineType {
     width: 36px;
     border: 1px solid #e2dede;
     border-radius: 5px 5px 0 0;
     position: absolute;
-    top: 32px;
-    left: -3px;
+    top: 60px;
+    left: 264px;
     display: none;
 }
 
-#header ul.tool .lineType p {
+#header .lineType p {
 	padding: 1px 0;
 	cursor: pointer;
 }
-#header ul.tool .lineType p i.iconfont {
+#header .lineType p i.iconfont {
 	color: #000;
 }
-#header ul.tool .lineType p.active,
-#header ul.tool .lineType p:hover {
+#header .lineType p.active,
+#header .lineType p:hover {
 	background: rgba(218, 218, 218, 0.14);
 }
 
-#header ul.tool .lineType p i.first{
+#header .lineType p i.first{
 	font-size: 14px;
 }
-#header ul.tool .lineType p i.second{
+#header .lineType p i.second{
 	font-size: 20px;
 }
-#header ul.tool .lineType p i.three{
+#header .lineType p i.three{
 	font-size: 27px;
 }
-#header ul.tool .lineType p i.third{
+#header .lineType p i.third{
 	font-size: 35px;
 }
 #content {
@@ -97,7 +97,63 @@ body {
 	height: 550px;
 	background:url(../images/background.png);
 	margin: 0 auto;
+	
+}
+.tips {
+    font-size: 12px;
+    position: absolute;
+    top: top;
+    bottom: 25px;
+    right: 100px;
+}
+#showHistory{
+	width: 1100px;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+#showHistory h2 {
+	font-size: 16px;
+    font-family: "Microsoft Yahei";
+    font-weight: normal;
+    text-align: left;
+    border-left: solid 4px #39c;
+    text-indent: 10px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    margin-left: 103px;
+}
 
+#showHistory .item {
+	float: left;
+    width: 225px;
+    margin: 10px 20px 10px 0;
+
+}
+#showHistory .itemsDiv{
+	margin-left: 105px;
+}
+#showHistory .item a{
+	margin-top: 10px;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: "Microsoft Yahei";
+    color: #666;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+#showHistory .item:nth-child(2) img {
+    box-shadow: rgb(51, 153, 204) 0px 0px 10px;
+}
+#showHistory .item img{
+	width: 225px;
+    height: 136px;
+    border: solid 1px #ccc;
+    border-style: dashed;
+    border-width: 1px;
+    border-color: #ccc;
 }
 #footer {
 	width: 1100px;
@@ -106,4 +162,8 @@ body {
 	margin: 0 auto;
 	text-align: center;
 	line-height: 50px;
+}
+canvas {
+
+    cursor: url(../images/cursor.gif) 2 2,crosshair;
 }
