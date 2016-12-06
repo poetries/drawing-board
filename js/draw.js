@@ -561,15 +561,19 @@ function Eraser(){
 		//canvas 擦除方法
 		ctx.clearRect(eraserX-ctx.lineWidth,eraserY-ctx.lineWidth,ctx.lineWidth*2,ctx.lineWidth*2);//擦除点开始位置
 		eraserFlag = 1;
+		
 	}
 	//随鼠标移动不停擦除
 	canvas.onmousemove = function(e){
 		var e = e || window.event;
 		var eraserX = e.pageX - this.offsetLeft;
 		var eraserY = e.pageY - this.offsetTop;
+		
+		
 		// 擦除方法
 		if(eraserFlag){//判断鼠标左键是否按下
-			ctx.clearRect(eraserX-ctx.lineWidth,eraserY-ctx.lineWidth,ctx.lineWidth*5,ctx.lineWidth*5);//擦除
+			ctx.clearRect(eraserX-ctx.lineWidth,eraserY-ctx.lineWidth,ctx.lineWidth*3,ctx.lineWidth*3);//擦除
+			saveImageToAry();
 		}
 		
 	}
@@ -649,3 +653,4 @@ function Download(){
 function Saveimg(){
 	save();
 }
+
