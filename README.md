@@ -1,4 +1,5 @@
 ### 画图板功能分析
+---
 
 - 功能区(保存、清空)
 - 工具区(形状和工具)
@@ -6,6 +7,7 @@
 - 绘图区域(canvas)
 
 ### 技术分析
+---
 
 - 页面布局
   - HTML5标签
@@ -19,6 +21,7 @@
   - 使用php的下载功能(JS无法操作本地文件)
 
 ### 画一个简单的画布
+---
 
 - 鼠标点击时
   - 准备起始点 moveTo()、设置标志位
@@ -29,6 +32,7 @@
   - 清空标志位
 
 ### 复杂的在线画板
+---
 
 - 获取相应元素对象
 - 设置点击状态
@@ -39,9 +43,11 @@
   - 工具指定
 
 ### Demo
+---
 
 - [演示](blog.poetries.top/drawing-board)
 
 ### License
+---
 
 © 2016 A [poetries's](http://blog.poetries.top) [Ideas](https://github.com/poetries/ideas).
