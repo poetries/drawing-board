@@ -18,7 +18,6 @@
 - canvas API
   - 属性设置、画线、写字、画图、画布操作(清空、获取画布信息)
 - 下载
-  - 使用php的下载功能(JS无法操作本地文件)
 
 画一个简单的画布
 ---
@@ -45,7 +44,7 @@
 Demo
 ---
 
-- [演示](blog.poetries.top/drawing-board)
+- [演示](http://blog.poetries.top/drawing-board)
 
 License
 ---
