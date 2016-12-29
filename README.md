@@ -6,7 +6,7 @@
 - 属性设置区(颜色和线宽)
 - 绘图区域(canvas)
 
-### 技术分析
+技术分析
 ---
 
 - 页面布局
@@ -20,7 +20,7 @@
 - 下载
   - 使用php的下载功能(JS无法操作本地文件)
 
-### 画一个简单的画布
+画一个简单的画布
 ---
 
 - 鼠标点击时
@@ -31,7 +31,7 @@
 - 鼠标离开或者抬
   - 清空标志位
 
-### 复杂的在线画板
+复杂的在线画板
 ---
 
 - 获取相应元素对象
@@ -42,12 +42,12 @@
   - 绘图形状设置
   - 工具指定
 
-### Demo
+Demo
 ---
 
 - [演示](blog.poetries.top/drawing-board)
 
-### License
+License
 ---
 
 © 2016 A [poetries's](http://blog.poetries.top) [Ideas](https://github.com/poetries/ideas).
