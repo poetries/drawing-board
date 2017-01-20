@@ -1,0 +1,34 @@
+{
+  "name": "drawing-board",
+  "version": "1.0.0",
+  "description": "drawing-board",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp watchjs minifycss image copy"
+  },
+  "keywords": [
+    "drawing-board"
+  ],
+  "author": "poetries",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "css-loader": "^0.26.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-less": "^3.3.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch-path": "^0.1.0",
+    "stream-combiner2": "^1.1.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0"
+  }
+}

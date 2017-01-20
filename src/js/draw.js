@@ -139,7 +139,7 @@ function Tuya(){
 	setLineWidth(4);
 }
 
-//线宽函数函数
+//线宽函数
 function setLineWidth(num){
 	switch (num){
 		case 0:
