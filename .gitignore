@@ -1,7 +1,0 @@
-node_modules
-.project
-.idea
-src/css
-**/*.map
-dist/**
-npm-debug.log
