@@ -52,7 +52,6 @@ $(function(){
 	};
 
 	
-
 	initHistorty();
 
 	// 删除

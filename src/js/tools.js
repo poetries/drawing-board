@@ -7,3 +7,13 @@ function addEventHander(obj,eventName,hander,type){
 		obj.addEventListener(eventName,hander,type);
 	}
 }
+function addClassAndRemoveClass(obj) {
+	$(obj).click(function(){
+		$(this).addClass("active")
+			.siblings()
+			.removeClass("active");
+	});
+}
+function getId(id){
+	return document.getElementById(id);
+}

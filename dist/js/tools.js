@@ -1,1 +1,0 @@
-"use strict";function addEventHander(t,e,n,d){document.attachEvent?t.attachEvent("on"+e,n):document.addEventListener&&t.addEventListener(e,n,d)}

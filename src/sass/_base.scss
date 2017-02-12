@@ -1,0 +1,23 @@
+body {
+  background: #fff;
+  font-family: "Microsoft Yahei";
+}
+#content {
+  width: 1100px;
+  height: 550px;
+  background:url(../images/background.png);
+  margin: 0 auto;
+
+}
+.tips {
+  font-size: 12px;
+  position: absolute;
+  top: top;
+  bottom: 25px;
+  right: 100px;
+}
+
+canvas {
+
+  cursor: url(../images/cursor.gif) 2 2,crosshair;
+}

@@ -1,24 +1,23 @@
 	
-//lineType show
+// 线宽类型选择
 $("#header ul.tool li.line").click(function(){
 	$("#header .lineType").slideDown(300);
 });
-$("#header .lineType p").click(function(){
-	$(this).addClass("active").siblings().removeClass("active");
+
+$("#lineType p").click(function(){
+	$(this).addClass("active")
+		   .siblings()
+		   .removeClass("active");
 	$("#header .lineType").slideUp(500);
 });
 
-//button active
-$("#header ul.tool li").click(function(){
-	$(this).addClass("active").siblings().removeClass("active");
-});
-$("#header ul.tool .lineType p").click(function(){
-	$(this).addClass("active").siblings().removeClass("active");
-});
+
+// 按钮的状态
+addClassAndRemoveClass("#header ul.tool li");
+addClassAndRemoveClass("#header ul.tool .lineType p");
 
 
-
-//绑定事件
+// 注册事件
 addEventHander(penType[0],"click",Pencil,false);
 addEventHander(penType[1],"click",Pen,false);
 addEventHander(penType[2],"click",Tuya,false);
@@ -45,14 +44,13 @@ addEventHander(lineWidths[1],"click",LineW3,false);
 addEventHander(lineWidths[2],"click",LineW5,false);
 addEventHander(lineWidths[3],"click",LineW8,false);
 
-//初始化
+// 初始化
 window.onload = init;
 
 function init(){
-	
-	Pencil();//默认选择pencil
-	setLineWidth(2);//默认线宽
-	initDrag();//初始化拖放事件
+	Pencil();// 默认选择pencil
+	setLineWidth(2);// 默认线宽
+	initDrag();// 初始化拖放事件
 }
 
 // 处理文件拖入事件，防止浏览器默认事件带来的重定向

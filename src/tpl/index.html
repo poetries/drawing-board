@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>drawing-board</title>
+		<link rel="stylesheet" type="text/css" href="css/all.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<header id="header">
+				<h1><a href="https://github.com/poetries" target="_blank">绘图板</a></h1>
+
+				<!--工具区域-->
+				<ul class="tool">
+					<!--笔类型-->
+					<li title="铅笔" class="active" id="pencil"><i class="iconfont">&#xe621;</i></li><!--铅笔-->
+					<li title="钢笔" id="pen"><i class="iconfont">&#xe603;</i></li><!--钢笔-->
+					<li  title="涂鸦" id="tuya"><i class="iconfont">&#xe601;</i></li><!--涂鸦-->
+					<!--线条风格-->
+					<li title="线条大小" class="line border" id="lineSize">
+						<i class="iconfont">&#xe61d;</i>
+					</li><!--粗细线条-->
+
+					<li title="画直线" id="line"><i class="iconfont">&#xe630;</i></li><!--斜线-->
+					<li title="方形" id="square"><i class="iconfont">&#xe634;</i></li><!--正方形轮廓-->
+					<li title="圆" id="circular"><i class="iconfont">&#xe611;</i></li><!--圆形轮廓-->
+					<li title="三角形" id="poly"><i class="iconfont">&#xe675;</i></li><!--三角形轮廓-->
+
+					<li title="正方形填充" id="squareFill"><i class="iconfont">&#xe600;</i></li><!--正方形填充-->
+					<li title="圆形填充" id="circularFill"><i class="iconfont">&#xe609;</i></li><!--圆形填充-->
+					<li class="border" title="三角形填充" id="polyFill"><i class="iconfont">&#xe60d;</i></li><!--三角形填充-->
+
+					<!--样式-->
+					<li title="选择颜色" id="color" class="showColor"><i class="iconfont">&#xe6f3;</i></li><!--颜色-->
+					<li title="填充前景" id="frontColor"><i class="iconfont">&#xe64c;</i></li><!--油漆-->
+					<li title="吸管" id="straw"><i class="iconfont">&#xe670;</i></li><!--吸管工具-->
+					<li title="字体" id="font"><i class="iconfont">&#xe618;</i></li><!--字体-->
+					<li  title="橡皮擦" id="eraser"><i class="iconfont">&#xe6c5;</i></li><!--橡皮擦--><li class="border" title="放大镜" id="magnifier"><i class="iconfont">&#xe626;</i></li><!--放大镜-->
+
+					<!--功能-->
+					<li title="撤销上一个操作" id="cancelPrev"><i class="iconfont">&#xe60a;</i></li><!--撤销-->
+					<li title="重做上一个操作" id="redo"><i class="iconfont">&#xe716;</i></li><!--撤销-->
+					<li title="清屏" id="clearSceen"><i class="iconfont">&#xe71a;</i></li><!--清空-->
+					<li title="下载" id="download">
+						<i class="iconfont">&#xe6c8;</i>
+					</li><!--下载-->
+					<li title="保存" id="saveImg"><i class="iconfont">&#xe633;</i></li><!--保存-->
+				</ul>
+				<div class="lineType" id="lineType">
+					<p class="active" id="lineW_1"><i class="iconfont first">&#xe604;</i></p>
+					<p id="lineW_3"><i class="iconfont second">&#xe604;</i></p>
+					<p id="lineW_5"><i class="iconfont three">&#xe604;</i></p>
+					<p id="lineW_8"><i class="iconfont third">&#xe604;</i></p>
+				</div>
+			</header>
+			<section id="content">
+				<!--<p class="tips">小提示：可以拖拽传入图片编辑</p>-->
+				<!--绘图区域-->
+				<canvas id="canvas" width="1090" height="550">您的浏览器不支持canvas!</canvas>
+
+			</section>
+
+			<div id="showHistory" class="clearfix">
+				<h2>绘画保存记录</h2>
+
+			</div>
+			<footer id="footer">
+				<small>版权所有  Designed by <a href="http://blog.poetries.top" target="_blank">@poetries</a></small>
+			</footer>
+		</div>
+	</body>
+	<script src="lib/jquery.js" ></script>
+	<script src="lib/jquery.bigcolorpicker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/all.js"></script>
+</html>
